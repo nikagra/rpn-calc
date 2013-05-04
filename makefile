@@ -36,7 +36,7 @@ $(PROGRAM): $(OBJS)
 tokens.cpp: tokens.l rpcalc.cpp
 	$(LEX) -o $@ $<
 
-rpcalc.cpp: rpcalc.y
+rpcalc.cpp: rpcalc.y global.h
 	$(SYN) -d -o $@ $<
 
 test: $(PROGRAM)
